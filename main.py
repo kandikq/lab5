@@ -29,7 +29,8 @@ class Polynom:
         return f"Polynom({self.points}, {self.color})"
 
     def __str__(self):
-        return f"Polynom Color: {self.color.name}, Points: {', '.join(map(str, self.points))}"
+        points_str = ', '.join(str(point) for point in self.points)
+        return f"Polynom Color: {self.color.name}, Points: [{points_str}]"
 
     def calculate_distance(self, point1, point2):
         return math.sqrt((point1.x - point2.x)**2 + (point1.y - point2.y)**2)
